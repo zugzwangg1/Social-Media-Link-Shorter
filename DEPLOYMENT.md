@@ -82,7 +82,7 @@ netlify deploy --prod
 Netlify dashboard'da şu environment variable'ı ekleyin:
 
 ```env
-REACT_APP_API_URL=https://your-backend-url.com
+REACT_APP_API_URL=https://<YOUR_BACKEND_URL>
 ```
 
 ### Backend Environment Variables
@@ -90,22 +90,22 @@ REACT_APP_API_URL=https://your-backend-url.com
 Backend servisinizde (Render/Railway) şunları ekleyin:
 
 ```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/social-link-hub
-JWT_SECRET=your-super-secret-jwt-key-min-32-characters
+MONGODB_URI=mongodb+srv://<USERNAME>:<PASSWORD>@<CLUSTER>.mongodb.net/<DATABASE_NAME>
+JWT_SECRET=<GENERATE_RANDOM_32_CHAR_STRING>
 JWT_EXPIRE=7d
 PORT=5000
 
 # OAuth (Opsiyonel)
-GOOGLE_CLIENT_ID=your-google-client-id
-GOOGLE_CLIENT_SECRET=your-google-client-secret
-GOOGLE_CALLBACK_URL=https://your-backend-url.com/api/auth/google/callback
+GOOGLE_CLIENT_ID=<YOUR_GOOGLE_CLIENT_ID>
+GOOGLE_CLIENT_SECRET=<YOUR_GOOGLE_CLIENT_SECRET>
+GOOGLE_CALLBACK_URL=https://<YOUR_BACKEND_URL>/api/auth/google/callback
 
-GITHUB_CLIENT_ID=your-github-client-id
-GITHUB_CLIENT_SECRET=your-github-client-secret
-GITHUB_CALLBACK_URL=https://your-backend-url.com/api/auth/github/callback
+GITHUB_CLIENT_ID=<YOUR_GITHUB_CLIENT_ID>
+GITHUB_CLIENT_SECRET=<YOUR_GITHUB_CLIENT_SECRET>
+GITHUB_CALLBACK_URL=https://<YOUR_BACKEND_URL>/api/auth/github/callback
 
 # Frontend URL (CORS için)
-FRONTEND_URL=https://your-netlify-site.netlify.app
+FRONTEND_URL=https://<YOUR_NETLIFY_SITE>.netlify.app
 ```
 
 ## 🔧 Netlify Konfigürasyonu
