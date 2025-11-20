@@ -1,0 +1,94 @@
+.space-background {
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(11, 61, 38, 0.7), rgba(11, 61, 38, 0.8)),
+    url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=1920&q=80') center/cover no-repeat fixed;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fallback gradient if image doesn't load */
+.space-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(11, 61, 38, 0.3) 0%, 
+    rgba(22, 91, 51, 0.3) 50%, 
+    rgba(11, 61, 38, 0.3) 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Snowflakes layers */
+.stars,
+.stars2,
+.stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 60% 70%, white, transparent),
+    radial-gradient(1px 1px at 50% 50%, white, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent);
+  background-size: 200px 200px;
+  animation: snowfall 20s linear infinite;
+  opacity: 0.6;
+}
+
+.stars2 {
+  background-image: 
+    radial-gradient(1px 1px at 30% 60%, white, transparent),
+    radial-gradient(2px 2px at 70% 20%, white, transparent);
+  background-size: 150px 150px;
+  animation: snowfall 15s linear infinite;
+  opacity: 0.4;
+}
+
+.stars3 {
+  background-image: 
+    radial-gradient(2px 2px at 40% 40%, rgba(255, 215, 0, 0.8), transparent),
+    radial-gradient(1px 1px at 90% 80%, rgba(255, 215, 0, 0.6), transparent);
+  background-size: 250px 250px;
+  animation: snowfall 25s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes snowfall {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* Overlay for better text readability */
+.space-background::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(11, 61, 38, 0.4) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}

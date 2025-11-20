@@ -1,0 +1,83 @@
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.spinner {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  border-top-color: var(--space-purple);
+  animation: spin 1.5s linear infinite;
+}
+
+.orbit:nth-child(1) {
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  animation-duration: 1s;
+  border-top-color: var(--space-purple);
+}
+
+.orbit:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  animation-duration: 1.5s;
+  border-top-color: var(--cosmic-blue);
+}
+
+.orbit:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  margin-left: -40px;
+  margin-top: -40px;
+  animation-duration: 2s;
+  border-top-color: var(--stellar-gold);
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  background: linear-gradient(135deg, var(--space-purple), var(--cosmic-blue));
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(107, 70, 193, 0.8);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}

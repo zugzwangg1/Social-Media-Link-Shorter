@@ -1,0 +1,133 @@
+.profile-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profile-form label {
+  color: var(--bright-white);
+  font-weight: 500;
+}
+
+.profile-form input,
+.profile-form textarea {
+  padding: 0.875rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--bright-white);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: var(--space-purple);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.profile-form small {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.btn-save {
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--space-purple), var(--cosmic-blue));
+  border: none;
+  border-radius: 10px;
+  color: var(--bright-white);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-save:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(107, 70, 193, 0.4);
+}
+
+.btn-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.profile-picture-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-picture-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--space-purple);
+}
+
+.file-input {
+  display: none;
+}
+
+.btn-upload {
+  padding: 0.875rem 1.5rem;
+  background: rgba(66, 153, 225, 0.2);
+  border: 1px solid var(--cosmic-blue);
+  border-radius: 10px;
+  color: var(--bright-white);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-upload:hover {
+  background: rgba(66, 153, 225, 0.3);
+  transform: translateY(-2px);
+}
+
+.color-picker-wrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.color-picker {
+  width: 80px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  background: transparent;
+}
+
+.color-input {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .color-picker-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .color-picker {
+    width: 100%;
+  }
+}

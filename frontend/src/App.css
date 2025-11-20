@@ -1,0 +1,54 @@
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+.space-background {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.space-background h1 {
+  font-size: 3rem;
+  background: linear-gradient(135deg, var(--christmas-red), var(--christmas-gold), var(--snow-white));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  z-index: 1;
+  animation: christmasGlow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.space-background p {
+  font-size: 1.2rem;
+  color: var(--snow-white);
+  opacity: 0.9;
+  z-index: 1;
+}
+
+@keyframes christmasGlow {
+  from {
+    filter: drop-shadow(0 0 10px var(--christmas-red));
+  }
+  to {
+    filter: drop-shadow(0 0 20px var(--christmas-gold));
+  }
+}
+
+@media (max-width: 768px) {
+  .space-background h1 {
+    font-size: 2rem;
+  }
+  
+  .space-background p {
+    font-size: 1rem;
+  }
+}
